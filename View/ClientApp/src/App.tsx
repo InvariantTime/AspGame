@@ -18,15 +18,9 @@ const App = () => {
             .configureLogging(LogLevel.Information)
             .build();
 
-        console.log("LOG");
-
-
         try {
             await connection.start()
                 .then(() => console.log("connected to hub"));
-
-            console.log("LOG 2");
-            connection.on("OnTest", () => console.log("Test!"));
 
         setHub(connection);
         }
