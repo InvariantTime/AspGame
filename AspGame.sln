@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspGame", "View\AspGame.csproj", "{00D92E7A-B8D8-4FC0-9832-2012930DD0D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F50CC78D-58CA-45E5-9D34-3EF6BEE1C54F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{79942DA9-E4F2-4482-ADC2-5255154ADA07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{2B921E39-FE84-430F-AE4D-6581B980EA10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspGame.DAL", "AspGame.DAL\AspGame.DAL.csproj", "{5AD09748-470C-4EAE-8D3F-33472FC17001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspGame.Model", "AspGame.Model\AspGame.Model.csproj", "{DADF3B85-D164-46DE-B858-09058AFAC3FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspGame.Services", "AspGame.Services\AspGame.Services.csproj", "{9C2ED7E6-5D2B-4773-B21F-0B4D3F83AC3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00D92E7A-B8D8-4FC0-9832-2012930DD0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D92E7A-B8D8-4FC0-9832-2012930DD0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D92E7A-B8D8-4FC0-9832-2012930DD0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D92E7A-B8D8-4FC0-9832-2012930DD0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AD09748-470C-4EAE-8D3F-33472FC17001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AD09748-470C-4EAE-8D3F-33472FC17001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AD09748-470C-4EAE-8D3F-33472FC17001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AD09748-470C-4EAE-8D3F-33472FC17001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADF3B85-D164-46DE-B858-09058AFAC3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADF3B85-D164-46DE-B858-09058AFAC3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADF3B85-D164-46DE-B858-09058AFAC3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADF3B85-D164-46DE-B858-09058AFAC3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2ED7E6-5D2B-4773-B21F-0B4D3F83AC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2ED7E6-5D2B-4773-B21F-0B4D3F83AC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2ED7E6-5D2B-4773-B21F-0B4D3F83AC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2ED7E6-5D2B-4773-B21F-0B4D3F83AC3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5AD09748-470C-4EAE-8D3F-33472FC17001} = {79942DA9-E4F2-4482-ADC2-5255154ADA07}
+		{DADF3B85-D164-46DE-B858-09058AFAC3FE} = {2B921E39-FE84-430F-AE4D-6581B980EA10}
+		{9C2ED7E6-5D2B-4773-B21F-0B4D3F83AC3F} = {F50CC78D-58CA-45E5-9D34-3EF6BEE1C54F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {164591BE-BCDA-4683-844F-C7887BF61B8C}
+	EndGlobalSection
+EndGlobal
