@@ -6,7 +6,7 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 
 const context = [
     "/api",
-    "/roomlist"
+    "/hubs"
 ];
 
 const onError = (err, req, resp, target) => {
@@ -21,10 +21,7 @@ module.exports = function (app) {
     onError: onError,
     secure: false,
     // Uncomment this line to add support for proxying websockets
-    //ws: true, 
-    headers: {
-      Connection: 'Keep-Alive'
-    }
+    ws: true
   });
 
   app.use(appProxy);

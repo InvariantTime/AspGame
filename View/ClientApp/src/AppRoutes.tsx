@@ -1,10 +1,16 @@
+import { RoomListConnection } from "./Connections/RoomListConnection";
 import { Home } from "./components/Home";
 
-const AppRoutes = [
-  {
-    index: true,
-    element: <Home />
-  }
-];
+interface Props {
+  roomListConnection: RoomListConnection
+}
 
-export default AppRoutes;
+export const CreateRoutes = (props: Props) => {
+
+    return [
+      {
+        index: true,
+        element: <Home connection={props.roomListConnection}/>
+      },
+    ];
+}

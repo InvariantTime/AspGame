@@ -1,40 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
+import { CreateRoutes } from './AppRoutes';
 import { Layout } from './components/Layout';
 import './custom.css';
-import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { CreateRoomListConnection, RoomListConnection } from './Connections/RoomListConnection';
 
-const hubUrl = '/roomlist';
+const roomListConnection = CreateRoomListConnection();
 
 const App = () => {
 
-    const [hub, setHub] = useState<HubConnection>();
+    useEffect(() => {
+        roomListConnection.Connect();
 
-    const connect = async () => {
-        var connection = new HubConnectionBuilder()
-            .withUrl(hubUrl)
-            .withAutomaticReconnect()
-            .configureLogging(LogLevel.Information)
-            .build();
-
-        try {
-            await connection.start()
-                .then(() => console.log("connected to hub"));
-
-        setHub(connection);
+        return () =>{
+            roomListConnection.Disconnect();
         }
-        catch (e) {
-            console.log(e);
-        }
-    }
 
-    connect();
+    }, [roomListConnection]);
+
+    const routes = CreateRoutes({
+        roomListConnection: roomListConnection
+    });
 
     return (
         <Layout>
             <Routes>
-                {AppRoutes.map((route, index) => {
+                {routes.map((route, index) => {
                     const { element, ...rest } = route;
                     return <Route key={index} {...rest} element={element} />;
                 })}
