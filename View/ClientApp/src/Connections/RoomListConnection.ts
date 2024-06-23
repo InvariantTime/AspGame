@@ -1,6 +1,6 @@
 import {HubConnection, HubConnectionBuilder, LogLevel} from "@microsoft/signalr";
 
-const hubUrl = "/hubs/roomlist";
+const hubUrl = "/hubs/roomList";
 
 export class RoomListConnection {
     

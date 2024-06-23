@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { CreateRoutes } from './AppRoutes';
-import { Layout } from './components/Layout';
 import './custom.css';
-import { CreateRoomListConnection, RoomListConnection } from './Connections/RoomListConnection';
+import { CreateRoomListConnection } from './Connections/RoomListConnection';
+import { RegisterForm } from './components/RegisterForm';
+import { RoomList } from './components/RoomList';
+import { RoomPresenter } from './components/RoomPresenter';
 
 const roomListConnection = CreateRoomListConnection();
 
@@ -12,7 +13,7 @@ const App = () => {
     useEffect(() => {
         roomListConnection.Connect();
 
-        return () =>{
+        return () => {
             roomListConnection.Disconnect();
         }
 
@@ -23,14 +24,9 @@ const App = () => {
     });
 
     return (
-        <Layout>
-            <Routes>
-                {routes.map((route, index) => {
-                    const { element, ...rest } = route;
-                    return <Route key={index} {...rest} element={element} />;
-                })}
-            </Routes>
-        </Layout>
+        <div className="min-h-screen flex items-center justify-center bg-slate-50">
+            <RegisterForm/>
+        </div>
     );
 }
 

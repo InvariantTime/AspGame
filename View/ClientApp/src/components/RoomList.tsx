@@ -1,6 +1,6 @@
 import React, { useState, useEffect, SetStateAction, Dispatch } from 'react';
-import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 import { RoomListConnection } from '../Connections/RoomListConnection';
+import { Button, Heading, IconButton, Table, TableContainer, Tbody, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 
 const url = "/api/rooms";
 
@@ -24,7 +24,6 @@ export const RoomList = (props: Props) => {
         });
 
         return () => {
-            
             setConnection(props.connection);
         }
 
@@ -32,25 +31,35 @@ export const RoomList = (props: Props) => {
 
 
     return (
-        <div>
-            <div>
-                <table className="table">
-                    <tbody>
-                        {rooms?.map((room, index) =>
-                            <tr key={room.name}>
-                                <td>{index}</td>
-                                <td>{room.name + 1}</td>
-                                <td>Players: {room.userCount ?? 0}/5</td>
-                                <td>User Name</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
+        <div className="w-3/4 max-h-200px p-8 shadow-lg">
+            <Heading className="text-center">Комнаты</Heading>
 
-            <div>
-                <button onClick={OnAddingRoom}>+</button>
-            </div>
+            <Button className="m-10" onClick={OnAddingRoom} colorScheme="blue">+</Button>
+
+            <TableContainer>
+                <Table>
+
+                    <Thead>
+                        <Tr>
+                            <Th>Название</Th>
+                            <Th>Количество игроков</Th>
+                            <Th>Владелец</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {
+                            rooms?.map((room, i) =>
+                                <Tr className="hover:bg-blue-300">
+                                    <Th>{room.name}</Th>
+                                    <Th>0</Th>
+                                    <Th>{room.adminName}</Th>
+                                </Tr>)
+                        }
+                    </Tbody>
+                </Table>
+
+            </TableContainer>
+
         </div>
     )
 }
@@ -98,4 +107,5 @@ type Room = {
     name: string;
     adminName: string;
     userCount: number;
+    url: string;
 };
